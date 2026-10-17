@@ -18,6 +18,7 @@ jobs:
     # are often NONE on pull_request_target at opened time, which skipped the
     # previous deny-list and left first-timer PRs open.
     if: >
+      github.repository_owner == 'crewAIInc' &&
       github.event.pull_request.user.type != 'Bot' &&
       !contains(fromJSON('["MEMBER","OWNER","COLLABORATOR","CONTRIBUTOR"]'),
                 github.event.pull_request.author_association)
