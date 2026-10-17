@@ -16,6 +16,7 @@ jobs:
   welcome:
     # Match the first-time contributor definition used by ftc-require-issue.
     if: >
+      github.repository_owner == 'crewAIInc' &&
       github.event.pull_request.merged == true &&
       github.event.pull_request.user.type != 'Bot' &&
       !contains(fromJSON('["MEMBER","OWNER","COLLABORATOR","CONTRIBUTOR"]'),
